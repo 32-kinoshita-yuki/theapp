@@ -14,7 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::group(['prefix' => 'influencer'], function() {
+ 
+  Route::get('influencer/register',[
+    'influencers' => 'InfluencerController@getRegister',
+    'as' => 'influencer.register'
+  ]);
+ 
+});
 
 Auth::routes();
 
