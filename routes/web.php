@@ -14,18 +14,70 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//インフルエンサー登録画面
 Route::group(['prefix' => 'influencer'], function() {
- 
-  Route::get('influencer/register',[
-    'influencers' => 'InfluencerController@getRegister',
-    'as' => 'influencer.register'
+Route::get('/register',[
+ 'uses' => 'RegisterInfluencersController@getRegister',
+  'as' => 'influencer.register'
+   ]);
+//POST送信した後の処理
+Route::post('/register',[
+  'uses' => 'RegisterInfluencersController@postRegister',
+  'as' => 'influencer.register'
   ]);
- 
+ //登録完了画面
+  Route::get('/complete',[
+  'uses' => 'RegisterInfluencersController@influencerComplete',
+  'as' => 'influencer.complete'
+  ]);
+  //ログイン画面
+Route::get('/login',[
+  'uses' => 'RegisterInfluencersController@getLogin',
+  'as' => 'influencer.login'
+  ]);
+   //ログイン画面POST処理
+  Route::post('/login',[
+  'uses' => 'RegisterInfluencersController@postLogin',
+  'as' => 'influencer.login'
+]);
+
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+ //依頼者登録画面
+ Route::group(['prefix' => 'requester'], function() {
+     Route::get('/register',[
+ 'uses' => 'RegisterRequestersController@getRegister',
+  'as' => 'requester.register'
+   ]);
+//POST送信した後の処理
+Route::post('/register',[
+  'uses' => 'RegisterRequestersController@postRequester',
+  'as' => 'requester.register'
+  ]);
+ //登録完了画面
+  Route::get('/complete',[
+  'uses' => 'RegisterRequestersController@requesterComplete',
+  'as' => 'requester.complete'
+  ]);
+  //ログイン画面
+Route::get('/login',[
+  'uses' => 'RegisterRequestersController@getLogin',
+  'as' => 'requester.login'
+  ]);
+//ログイン画面POST処理
+  Route::post('/login',[
+  'uses' => 'RegisterRequestersController@postLogin',
+  'as' => 'requester.login'
+]);
+});
+
+
+
 
 Auth::routes();
 
