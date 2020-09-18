@@ -18,7 +18,7 @@ class RegisterInfluencersController extends Controller
     'password' => 'required|min:4',
     'tell' => '',
     'name' => 'required',
-    'email' => '',
+    'email' => 'email',
     'address' => '',
     'gender' => '',
     'age' => '',
@@ -31,7 +31,7 @@ class RegisterInfluencersController extends Controller
     'password' => bcrypt($request->input('password')),
     'tell' => '',
     'name' => $request->input('name'),
-    'email' => $request->input(''),
+    'email' => $request->input('email'),
     'address' => '',
     'gender' => '',
     'age' => '',
@@ -40,10 +40,10 @@ class RegisterInfluencersController extends Controller
     'sns_genre' => '',
   ]);
   // 保存
-  $RegisterInfluencer->save();
+  $registerinfluencer->save();
  
   // リダイレクト
-  return view('influencer.complete');
+  return redirect()->route('influencer.complete');
 }
 //インフルエンサー新規登録完了画面view
   public function influencerComplete(){

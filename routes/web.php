@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-//インフルエンサー登録画面
+//インフルエンサー新規登録画面
 Route::group(['prefix' => 'influencer'], function() {
 Route::get('/register',[
  'uses' => 'RegisterInfluencersController@getRegister',
