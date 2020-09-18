@@ -42,7 +42,11 @@ Route::get('/login',[
   'uses' => 'RegisterInfluencersController@postLogin',
   'as' => 'influencer.login'
 ]);
-
+//index
+  Route::get('/index',[
+  'uses' => 'RegisterInfluencersController@index',
+  'as' => 'influencer.index'
+]);
 });
 
 
@@ -73,6 +77,11 @@ Route::get('/login',[
   Route::post('/login',[
   'uses' => 'RegisterRequestersController@postLogin',
   'as' => 'requester.login'
+]);
+//index
+  Route::get('/index',[
+  'uses' => 'RegisterRequestersController@index',
+  'as' => 'requester.index'
 ]);
 });
 

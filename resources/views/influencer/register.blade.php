@@ -98,6 +98,16 @@
                     
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="登録">
+                    <p>
+                      <input type="text" name="password" placeholder="enter password" value="{{ old('password') }}">
+                       @if ($errors->has('password'))
+                       <span class="error">{{ $errors->first('password') }}</span>
+                       @endif
+                    </p>
+                    
+                    
+                    
+                    
                     </form>
             </div>
         </div>

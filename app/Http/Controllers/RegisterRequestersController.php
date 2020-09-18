@@ -15,16 +15,27 @@ class RegisterRequestersController extends Controller
   // バリデーション
   $this->validate($request,[
     'password' => 'required|min:4',
-    'tell' => 'required',
+    'tell' => '',
     'name' => 'required',
-    'email' => 'email|required|unique:users',
-    'address' => 'required',
-    'name_company' => 'required',
-    'url_company' => 'required',
-    'url_pr' => 'required',
-    'body' => 'required',
+    'email' => '',
+    'address' => '',
+    'name_company' => '',
+    'url_company' => '',
+    'url_pr' => '',
+    'body' => '',
   ]);
  
+  $registerrequester = new Registerrequester([
+    'password' =>bcrypt($request->input('')),
+    'tell' => '',
+    'name' => $request->input(''),
+    'email' => $request->input(''),
+    'address' => '',
+    'name_company' => '',
+    'url_company' => '',
+    'url_pr' => '',
+    'body' => '',
+  ]);
  
   // 保存
   $requester->save();
@@ -53,4 +64,9 @@ public function getLogin(){
   }
   return redirect()->back();
   }
+  //index
+   public function index(Request $request)
+  {
+  return view('requester.index');
+}
 }

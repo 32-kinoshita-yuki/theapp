@@ -16,34 +16,34 @@ class RegisterInfluencersController extends Controller
   // バリデーション
   $this->validate($request,[
     'password' => 'required|min:4',
-    'tell' => 'required',
+    'tell' => '',
     'name' => 'required',
-    'email' => 'email|required|unique:users',
-    'address' => 'required',
-    'gender' => 'required',
-    'age' => 'required',
-    'sns_kind' => 'required',
-    'sns_url' => 'required',
-    'sns_genre' => 'required',
+    'email' => '',
+    'address' => '',
+    'gender' => '',
+    'age' => '',
+    'sns_kind' => '',
+    'sns_url' => '',
+    'sns_genre' => '',
   ]);
   
-  $registerinfluencer = new Registerinfluencer([
+  $registerinfluencer = new Registerinfluencer([//DBに登録するための準備　登録する値を設定
     'password' => bcrypt($request->input('password')),
-    'tell' => 'required',
+    'tell' => '',
     'name' => $request->input('name'),
-    'email' => $request->input('email'),
-    'address' => 'required',
-    'gender' => 'required',
-    'age' => 'required',
-    'sns_kind' => 'required',
-    'sns_url' => 'required',
-    'sns_genre' => 'required',
+    'email' => $request->input(''),
+    'address' => '',
+    'gender' => '',
+    'age' => '',
+    'sns_kind' => '',
+    'sns_url' => '',
+    'sns_genre' => '',
   ]);
   // 保存
   $RegisterInfluencer->save();
  
   // リダイレクト
-  return redirect()->route('influencer.complete');
+  return view('influencer.complete');
 }
 //インフルエンサー新規登録完了画面view
   public function influencerComplete(){
@@ -66,4 +66,9 @@ public function getLogin(){
   }
   return redirect()->back();
   }
+  //index
+  public function index(Request $request)
+  {
+  return view('influencer.index');
+}
 }
