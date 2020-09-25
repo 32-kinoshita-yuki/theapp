@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\RegisterRequester;
+use Auth;
 
 class RegisterRequestersController extends Controller
 {
@@ -17,7 +18,7 @@ class RegisterRequestersController extends Controller
     'password' => 'required|min:4',
     'tell' => '',
     'name' => 'required',
-    'email' => '',
+    'email' => 'required',
     'address' => '',
     'name_company' => '',
     'url_company' => '',
@@ -26,10 +27,10 @@ class RegisterRequestersController extends Controller
   ]);
  
   $registerrequester = new Registerrequester([
-    'password' =>bcrypt($request->input('')),
+    'password' =>bcrypt($request->input('password')),
     'tell' => '',
-    'name' => $request->input(''),
-    'email' => $request->input(''),
+    'name' => $request->input('name'),
+    'email' => $request->input('email'),
     'address' => '',
     'name_company' => '',
     'url_company' => '',
@@ -38,7 +39,7 @@ class RegisterRequestersController extends Controller
   ]);
  
   // 保存
-  $requester->save();
+   $registerrequester->save();
  
   // リダイレクト
   return redirect()->route('requester.complete');

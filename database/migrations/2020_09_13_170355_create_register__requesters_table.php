@@ -25,7 +25,6 @@ class CreateRegisterRequestersTable extends Migration
             $table->string('url_company'); //会社のurlを保存するカラム
             $table->string('url_pr'); //PR商品やサービスのurlを保存するカラム
             $table->string('body'); //PR商品やサービスの説明を保存するカラム
-            $table->rememberToken();
         });
     }
 

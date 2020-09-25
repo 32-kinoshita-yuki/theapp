@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>依頼者 登録画面</h2>
-                <form action="{{ action('RegisterInfluencersController@getRegister') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('RegisterRequestersController@getRegister') }}" method="post" enctype="multipart/form-data">
                     
               <div class="form-group row">
                         <label class="col-md-2">ID</label>

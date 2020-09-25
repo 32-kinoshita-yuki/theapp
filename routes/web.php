@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 
+
+
+
+
+
 //インフルエンサー新規登録画面
 Route::group(['prefix' => 'influencer'], function() {
 Route::get('/register',[
@@ -42,11 +47,14 @@ Route::get('/login',[
   'uses' => 'RegisterInfluencersController@postLogin',
   'as' => 'influencer.login'
 ]);
-//index
-  Route::get('/index',[
-  'uses' => 'RegisterInfluencersController@index',
-  'as' => 'influencer.index'
+ //プロフィール画面
+Route::get('/profile',[
+  'uses' => 'ProfileInfluencersController@getProfile',
+  'as' => 'influencer.profile'
 ]);
+
+
+
 });
 
 
@@ -60,7 +68,7 @@ Route::get('/login',[
    ]);
 //POST送信した後の処理
 Route::post('/register',[
-  'uses' => 'RegisterRequestersController@postRequester',
+  'uses' => 'RegisterRequestersController@postRegister',
   'as' => 'requester.register'
   ]);
  //登録完了画面
@@ -78,15 +86,11 @@ Route::get('/login',[
   'uses' => 'RegisterRequestersController@postLogin',
   'as' => 'requester.login'
 ]);
-//index
-  Route::get('/index',[
-  'uses' => 'RegisterRequestersController@index',
-  'as' => 'requester.index'
-]);
+
 });
 
 
-
+Route::get('/', 'UsersController@index');
 
 Auth::routes();
 

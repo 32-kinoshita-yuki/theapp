@@ -18,7 +18,7 @@ class RegisterInfluencersController extends Controller
     'password' => 'required|min:4',
     'tell' => '',
     'name' => 'required',
-    'email' => 'email',
+    'email' => 'required',
     'address' => '',
     'gender' => '',
     'age' => '',
@@ -62,13 +62,9 @@ public function getLogin(){
   ]);
  
   if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
-  return redirect()->route('influencer.index');
+  return redirect()->route('admin.influencer.profile');
   }
   return redirect()->back();
   }
-  //index
-  public function index(Request $request)
-  {
-  return view('influencer.index');
-}
+  
 }
