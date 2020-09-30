@@ -1,8 +1,6 @@
 
 @charset "utf-8";
 /*要素のフォントサイズやマージン・パディングをリセットしています*/
-
-/*style css*/
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -24,7 +22,8 @@ time, mark, audio, video {
   background: transparent;
 }
 body {
-	background: #000000;
+	background: #ffffff;
+	color:#000000;
 }
 .nakami {
 	width: 52%;
@@ -37,7 +36,6 @@ body {
 	font-size: 29px;
 	font-family: YuMincho, "Yu Mincho", serif;	
 	padding: 1em 0;
-	color: #FFFFFF;
 	font-weight: bold;
 }
 .titele span {
@@ -60,7 +58,7 @@ body {
     padding: 0;
 }
 .diary img {
-	width: 31%;
+	width: 30%;
 	padding: 0.5em;
 	height: auto;
 }
@@ -70,6 +68,7 @@ body {
 	height: auto;
 	margin-left: 24%;
 	padding: 0.5em 0 ;
+	color:#000000;
 }
 .sirase {
 	font-size: 1.1em;
@@ -111,261 +110,7 @@ footer {
 	padding: 0.5em;
 	height: auto;
 }
-}
 
-
-
-/*nav css*/
-
-
-.inner {
-    width: 980px;
-    margin: 0 auto;
-}
-.inner:after {
-    content: "";
-    clear: both;
-    display: block;
-}
- 
-/* header */
-#top-head {
-    top: -100px;
-    position: absolute;
-    width: 100%;
-    margin: 100px auto 0;
-    padding: 30px 0 0;
-    line-height: 1;
-    z-index: 999;
-	background: #000000;
-}
-#top-head a,
-#top-head {
-    color: #fff;
-    text-decoration: none;
-}
-#top-head .inner {
-    position: relative;
-}
-#top-head .logo {
-    float: left;
-    font-size: 36px;
-}
-#global-nav ul {
-    list-style: none;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-size: 14px;
-}
-#global-nav ul li {
-    float: left;
-}
-#global-nav ul li a {
-    padding: 0 30px;
-}
- 
-/* Fixed */
-#top-head.fixed {
-    margin-top: 0;
-    top: 0;
-    position: fixed;
-    padding-top: 10px;
-    height: 55px;
-    background: #fff;
-    background: rgba(255,255,255,.7);
-    transition: top 0.65s ease-in;
-    -webkit-transition: top 0.65s ease-in;
-    -moz-transition: top 0.65s ease-in;
-}
-#top-head.fixed .logo {
-    font-size: 24px;
-    color: #333;
-}
-#top-head.fixed #global-nav ul li a {
-    color: #333;
-    padding: 0 20px;
-}
- 
-/* Toggle Button */
-#nav-toggle {
-    display: none;
-    position: absolute;
-    right: 12px;
-    top: 14px;
-    width: 34px;
-    height: 36px;
-    cursor: pointer;
-    z-index: 101;
-}
-#nav-toggle div {
-    position: relative;
-}
-#nav-toggle span {
-    display: block;
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background: #666;
-    left: 0;
-    -webkit-transition: .35s ease-in-out;
-    -moz-transition: .35s ease-in-out;
-    transition: .35s ease-in-out;
-}
-#nav-toggle span:nth-child(1) {
-    top: 0;
-}
-#nav-toggle span:nth-child(2) {
-    top: 11px;
-}
-#nav-toggle span:nth-child(3) {
-    top: 22px;
-}
-@media screen and (max-width: 640px) {
-    #top-head,
-    .inner {
-        width: 100%;
-        padding: 0;
-    }
-    #top-head {
-        top: 0;
-        position: fixed;
-        margin-top: 0;
-    }
-    /* Fixed reset */
-    #top-head.fixed {
-        padding-top: 0;
-        background: transparent;
-    }
-    #mobile-head {
-        background: #fff;
-        width: 100%;
-        height: 56px;
-        z-index: 999;
-        position: relative;
-    }
-    #top-head.fixed .logo,
-    #top-head .logo {
-        position: absolute;
-        left: 13px;
-        top: 13px;
-        color: #333;
-        font-size: 26px;
-    }
-    #global-nav {
-        position: absolute;
-        /* 開いてないときは画面外に配置 */
-        top: -500px;
-        background: #333;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-        -webkit-transition: .5s ease-in-out;
-        -moz-transition: .5s ease-in-out;
-        transition: .5s ease-in-out;
-    }
-    #global-nav ul {
-        list-style: none;
-        position: static;
-        right: 0;
-        bottom: 0;
-        font-size: 14px;
-    }
-    #global-nav ul li {
-        float: none;
-        position: static;
-    }
-    #top-head #global-nav ul li a,
-    #top-head.fixed #global-nav ul li a {
-        width: 100%;
-        display: block;
-        color: #fff;
-        padding: 18px 0;
-    }
-    #nav-toggle {
-        display: block;
-    }
-    /* #nav-toggle 切り替えアニメーション */
-    .open #nav-toggle span:nth-child(1) {
-        top: 11px;
-        -webkit-transform: rotate(315deg);
-        -moz-transform: rotate(315deg);
-        transform: rotate(315deg);
-    }
-    .open #nav-toggle span:nth-child(2) {
-        width: 0;
-        left: 50%;
-    }
-    .open #nav-toggle span:nth-child(3) {
-        top: 11px;
-        -webkit-transform: rotate(-315deg);
-        -moz-transform: rotate(-315deg);
-        transform: rotate(-315deg);
-    }
-    /* #global-nav スライドアニメーション */
-    .open #global-nav {
-        /* #global-nav top + #mobile-head height */
-        -moz-transform: translateY(556px);
-        -webkit-transform: translateY(556px);
-        transform: translateY(556px);
-    }
-}
-
-     /* #slider css */
-    
-.slider{
-    margin: 100px auto;
-    width: 80%;
-}
-.slider {
-        width: 53%;
-        margin: 20px auto;
-    }
-
-    .slick-slide {
-      margin: 0px 20px;
-    }
-
-    .slick-slide img {
-      width: 100%;
-		height: auto;
-    }
-
-    .slick-prev:before,
-    .slick-next:before {
-      color: black;
-    }
-
-
-    .slick-slide {
-      transition: all ease-in-out .3s;
-      opacity: .2;
-    }
-    
-    .slick-active {
-      opacity: .5;
-    }
-
-    .slick-current {
-      opacity: 1;
-	 }
-.sli {
-	width: 100%;
-	height: auto;
-}
-@media screen and (max-width: 640px) {
-.slider {
-        width: 85%;
-        margin: 5px auto;
-    }
-.sli {
-	width: 100%;
-	height: auto;
-}
-	.sli img {
-		width: 100%;
-		height: auto;
-	}
 }
     
     

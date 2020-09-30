@@ -16,10 +16,8 @@ Route::get('/', function () {
 });
 
 
-
-
-
-
+//共通ホーム画面
+Route::get('/', 'UsersController@index');
 
 //インフルエンサー新規登録画面
 Route::group(['prefix' => 'influencer'], function() {
@@ -90,7 +88,7 @@ Route::get('/login',[
 });
 
 
-Route::get('/', 'UsersController@index');
+
 
 Auth::routes();
 

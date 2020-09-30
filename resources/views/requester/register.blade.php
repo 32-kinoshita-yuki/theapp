@@ -3,6 +3,7 @@
 
 @section('content')
 <div class="container">
+     <div class="form-nakami">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>依頼者 登録画面</h2>
@@ -75,10 +76,10 @@
                      <div class="form-group row">
                         <label class="col-md-2">PR商品やサービスの説明</label>
                         <div class="col-md-10">
-                           <textarea class="form-control" name="body" >{{ old('body') }}" </textarea>
+                           <textarea  class="form-control" name="body" >{{ old('body') }}" </textarea>
                         </div>
+                    </div><!-- form-nakami -->
                     </div>
-                    
                    
                     
                     {{ csrf_field() }}

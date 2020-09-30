@@ -34,8 +34,14 @@ class ProfileInfluencersController extends Controller
     'sns_url' => '',
     'sns_genre' => '',
   ]);
+  
   // 保存
-  $registerinfluencer->save();
- 
+  $profileinfluencer->save();
+
+// リダイレクト
+  return redirect()->route('index');
+}
+public function index(){
+  return view('index');
 }
 }

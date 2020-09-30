@@ -1,0 +1,58 @@
+@charset "utf-8";
+.form-group row{
+  text-align: center;
+}
+.col-md-10 {
+  width: 60%;
+	height: auto;
+}
+.col-md-2 {
+ margin-top:30%;
+}
+.touroku {
+  width:100%;
+  text-align: center;
+  margin-top:1em;
+
+}
+label {
+    width: auto;
+    margin:0.2em;}
+    
+.form-nakami{
+   margin-top: 5em;
+   width: 30%;
+   margin-left: 30%;
+   margin-right: auto;
+}
+input.form-control {
+  width:500px;
+}
+textarea { /*依頼者登録　商品紹介*/
+width: 500px;
+height: 25em;
+}
+ .title { /*プロフィール登録　タイトル注意書き*/
+  margin-bottom: 10%;
+}
+@media screen and (max-width: 640px) {
+ .form-nakami{
+  margin-top: 5em;
+    width: 100%;
+   margin-left: 2%;
+    margin-right: auto;
+} 
+.form-control {
+  width: 344px
+}
+input.form-control {
+  width:272px
+}
+.col-md-100 {
+    width: 98%;
+}
+.col-md-10 {
+  width: 98%;
+	height: auto;
+}
+} 

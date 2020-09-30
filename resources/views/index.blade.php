@@ -2,40 +2,7 @@
  @section('title', 'home')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script><!-- スライド --> 
-<script src="slick/slick.js" type="text/javascript" charset="utf-8"></script><!-- スライド --> 
-
-<!-- スライド --> 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- NAV中身 --> 
-  <header id="top-head">
-	<div class="inner">
-		<div id="mobile-head">
-			<h1 class="logo">myapp</h1>
-			<div id="nav-toggle">
-				<div>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-		</div>
-		<nav id="global-nav">
-			<ul>
-				<li><a href="#">TOP</a></li>
-				<li><a href="#">インフルエンサーを探す</a></li>
-				<li><a href="#">ご利用方法</a></li>
-				<li><a href="#">MYAPPコラム</a></li>
-				<li><a href="#">運営情報</a></li>
-			</ul>
-		</nav>
-	</div>
-</header>
-
-<!-- NAV中身終了 --> 
-<!-- 全体中身 --> 
 <!-- インフルエンサー --> 
 	<div class="nakami">
 		<p class="titele"><span>I</span>NFULUENSA LIST</p>
@@ -68,15 +35,15 @@
 <div class="nakami">
 	<p class="titele"><span>P</span>OST</p>
 	<div class="diary">
-		<img src="img/diary/1.png" width="400" height="400" alt=""/>
-		<img src="img/diary/2.png" width="400" height="400" alt=""/>
-		<img src="img/diary/3.png" width="400" height="400" alt=""/>
-		<img src="img/diary/4.png" width="400" height="400" alt=""/>
-		<img src="img/diary/5.png" width="400" height="400" alt=""/>
-		<img src="img/diary/6.png" width="400" height="400" alt=""/>
-		<img src="img/diary/7.png" width="400" height="400" alt=""/>
-		<img src="img/diary/8.png" width="400" height="400" alt=""/>
-		<img src="img/diary/9.png" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/1.png') }}" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/2.png') }}" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/3.png') }}" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/4.png') }}" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/5.png') }}" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/6.png') }}" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/7.png') }}" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/8.png') }}" width="400" height="400" alt=""/>
+		<img src="{{ asset('/img/diary/9.png') }}" width="400" height="400" alt=""/>
 	</div>
 </div>
 	<div class="box13">
@@ -112,7 +79,7 @@
 
 
 
-<!-- スライダースクリプト -->
+<!--- スライダースクリプト ------>
  <script type="text/javascript">
     $('.regular').slick({
     autoplay:true,
@@ -141,10 +108,7 @@
     ]
 });
 </script>	
-
-
-
-
+<!--- スライダースクリプト ------>
 <!--- NAVIスクリプト ------>
 
 <script>
@@ -166,7 +130,13 @@
     });
 })(jQuery);
 </script>
-<!--- NAVIスクリプト ------>	
+	
+<!--- NAVIスクリプト ------>
+
+
+
+
+
 
 
 
