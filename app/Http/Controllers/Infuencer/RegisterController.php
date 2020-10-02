@@ -11,6 +11,10 @@ class RegisterInfluencersController extends Controller
     public function getRegister(){
       return View('influencer.register');
   }
+    public function getComplete(){
+      return view('influencer.complete');
+  }
+    
   
   public function postRegister(Request $request){
   // バリデーション
@@ -44,16 +48,16 @@ class RegisterInfluencersController extends Controller
  
   // リダイレクト
   return redirect()->route('influencer.complete');
-}
-//インフルエンサー新規登録完了画面view
+  }
+  //インフルエンサー新規登録完了画面view
   public function influencerComplete(){
   return view('influencer.complete');
-}
-//インフルエンサーログイン画面view
-public function getLogin(){
+  }
+  //ログイン画面view
+  public function getLogin(){
   return view('influencer.login');
   }
-  //インフルエンサーログイン処理
+  //ログインからのPOST処理
   public function postLogin(Request $request)
   {
   $this->validate($request,[
@@ -62,7 +66,7 @@ public function getLogin(){
   ]);
  
   if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
-  return redirect()->route('admin.influencer.profile');
+  return redirect()->route('influencer.profile');
   }
   return redirect()->back();
   }

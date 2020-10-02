@@ -22,17 +22,17 @@ Route::get('/', 'UsersController@index');
 //インフルエンサー新規登録画面
 Route::group(['prefix' => 'influencer'], function() {
 Route::get('/register',[
- 'uses' => 'RegisterInfluencersController@getRegister',
+ 'uses' => 'Influencer\RegisterController@getRegister',
   'as' => 'influencer.register'
    ]);
 //POST送信した後の処理
 Route::post('/register',[
-  'uses' => 'RegisterInfluencersController@postRegister',
+  'uses' => 'Influencer\RegisterController@postRegister',
   'as' => 'influencer.register'
   ]);
  //登録完了画面
   Route::get('/complete',[
-  'uses' => 'RegisterInfluencersController@influencerComplete',
+  'uses' => 'Influencer\RegisterController@getComplete',
   'as' => 'influencer.complete'
   ]);
   //ログイン画面
@@ -40,18 +40,28 @@ Route::get('/login',[
   'uses' => 'RegisterInfluencersController@getLogin',
   'as' => 'influencer.login'
   ]);
-   //ログイン画面POST処理
+   //ログインからのPOST処理
   Route::post('/login',[
-  'uses' => 'RegisterInfluencersController@postLogin',
+  'uses' => 'Influencer\RegisterController@postLogin',
   'as' => 'influencer.login'
 ]);
  //プロフィール画面
 Route::get('/profile',[
-  'uses' => 'ProfileInfluencersController@getProfile',
+  'uses' => 'Influencer\ProfileController@getProfile',
   'as' => 'influencer.profile'
 ]);
-
-
+ //blog create
+Route::get('blog/create',[
+  'uses' => 'Influencer\BlogController@create',
+]);
+//blog edit
+Route::get('blog/edit',[
+  'uses' => 'Influencer\BlogController@edit',
+]);
+ //blog edit
+Route::get('blog/edit',[
+  'uses' => 'Influencer\BlogController@update',
+]);
 
 });
 
@@ -61,27 +71,27 @@ Route::get('/profile',[
  //依頼者登録画面
  Route::group(['prefix' => 'requester'], function() {
      Route::get('/register',[
- 'uses' => 'RegisterRequestersController@getRegister',
+ 'uses' => 'Requester\RegisterController@getRegister',
   'as' => 'requester.register'
    ]);
 //POST送信した後の処理
 Route::post('/register',[
-  'uses' => 'RegisterRequestersController@postRegister',
+  'uses' => 'Requester\RegisterController@postRegister',
   'as' => 'requester.register'
   ]);
  //登録完了画面
   Route::get('/complete',[
-  'uses' => 'RegisterRequestersController@requesterComplete',
+  'uses' => 'Requester\RegisterController@requesterComplete',
   'as' => 'requester.complete'
   ]);
   //ログイン画面
 Route::get('/login',[
-  'uses' => 'RegisterRequestersController@getLogin',
+  'uses' => 'Requester\RegisterController@getLogin',
   'as' => 'requester.login'
   ]);
 //ログイン画面POST処理
   Route::post('/login',[
-  'uses' => 'RegisterRequestersController@postLogin',
+  'uses' => 'Requester\RegisterController@postLogin',
   'as' => 'requester.login'
 ]);
 

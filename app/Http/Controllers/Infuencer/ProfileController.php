@@ -11,7 +11,7 @@ class ProfileInfluencersController extends Controller
 {
     public function getProfile()
     {
-        return view('admin.influencer.profile');
+        return view('influencer.profile');
     }
     public function postProfile(Request $request){
   // バリデーション
