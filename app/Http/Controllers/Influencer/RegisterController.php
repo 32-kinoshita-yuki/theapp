@@ -1,22 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Influencer;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\RegisterInfluencer;
-use Auth;
 
-class RegisterInfluencersController extends Controller
+class RegisterController extends Controller
 {
     public function getRegister(){
-      return View('influencer.register');
+      return View('influencer.register.register');
   }
-    public function getComplete(){
-      return view('influencer.complete');
-  }
-    
-  
-  public function postRegister(Request $request){
+   public function postRegister(Request $request){
   // バリデーション
   $this->validate($request,[
     'password' => 'required|min:4',
@@ -47,15 +42,15 @@ class RegisterInfluencersController extends Controller
   $registerinfluencer->save();
  
   // リダイレクト
-  return redirect()->route('influencer.complete');
+  return redirect()->route('influencer.register.complete');
   }
   //インフルエンサー新規登録完了画面view
-  public function influencerComplete(){
-  return view('influencer.complete');
+  public function getComplete(){
+  return view('influencer.register.complete');
   }
   //ログイン画面view
   public function getLogin(){
-  return view('influencer.login');
+  return view('influencer.register.login');
   }
   //ログインからのPOST処理
   public function postLogin(Request $request)
@@ -65,10 +60,11 @@ class RegisterInfluencersController extends Controller
   'password' => 'required|min:4'
   ]);
  
-  if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
-  return redirect()->route('influencer.profile');
-  }
-  return redirect()->back();
+  //if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
+ // return redirect()->route('influencer.profile.profile');
+  //}
+  //return redirect()->back();
   }
   
 }
+

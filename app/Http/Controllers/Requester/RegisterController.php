@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Requester;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\RegisterRequester;
-use Auth;
 
-class RegisterRequestersController extends Controller
+class RegisterController extends Controller
 {
     public function getRegister(){
-      return View('requester.register');
+      return View('requester.register.register');
   }
   
   public function postRegister(Request $request){
@@ -42,15 +42,15 @@ class RegisterRequestersController extends Controller
    $registerrequester->save();
  
   // リダイレクト
-  return redirect()->route('requester.complete');
+  return redirect()->route('requester.register.complete');
 }
 //依頼者新規登録完了画面view
-public function requesterComplete(){
-  return view('requester.complete');
+public function getComplete(){
+  return view('requester.register.complete');
 }
 //依頼者ログイン画面view
 public function getLogin(){
-  return view('requester.login');
+  return view('requester.register.login');
   }
   //依頼者ログイン処理
   public function postLogin(Request $request)
@@ -60,14 +60,9 @@ public function getLogin(){
   'password' => 'required|min:4'
   ]);
  
-  if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
+ if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
   return redirect()->route('requester.index');
   }
   return redirect()->back();
   }
-  //index
-   public function index(Request $request)
-  {
-  return view('requester.index');
-}
 }

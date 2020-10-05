@@ -2,7 +2,7 @@
 @extends('layouts.header')
  @section('title', 'インフルエンサープロフィール登録')
 @section('content')
-<form action="{{ action('ProfileInfluencersController@getProfile') }}" method="post" enctype="multipart/form-data">
+<form action="{{action('Influencer\ProfileController@getProfile') }}" method="post" enctype="multipart/form-data">
 <div class="form-nakami">
     <h3>インフルエンサープロフィール登録</h3>
     <p class="title">こちらは依頼者も観覧するものになります</p>
