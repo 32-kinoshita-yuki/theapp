@@ -32,7 +32,8 @@ Route::get('profile/create', 'Influencer\ProfileController@create');   //profile
 Route::get('profile/edit', 'Influencer\ProfileController@edit');       //profile/edit
 Route::get('profile/update', 'Influencer\ProfileController@update');   //profile/update
 
-Route::get('blog/create', 'Influencer\BlogController@create');         //blog/create
+Route::get('blog/create', 'Influencer\BlogController@showCreate')->name('create'); //blog/create ブログの登録画面
+Route::post('blog/store', 'Influencer\BlogController@exeStore')->name('store'); //blog/store ブログの登録
 Route::get('blog/edit', 'Influencer\BlogController@edit');             //blog/edit
 Route::get('/blog', 'Influencer\BlogController@index');                //blog/index
 });
