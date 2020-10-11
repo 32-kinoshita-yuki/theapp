@@ -1,5 +1,7 @@
-@extends('layouts.master_auth')
- 
+
+@section('title', 'インフルエンサー登録完了画面')
 @section('content')
- <h3>インフルエンサー会員登録完了しました。</h3>
+
+                <h2>インフルエンサー登録完了しました！</h2>
+                
 @endsection

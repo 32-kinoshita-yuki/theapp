@@ -13,11 +13,7 @@
               <th>内容</th>
           </tr>
           @foreach($bloginfluencer as $blogInfluencer)
-          <tr>
-              <td>{{ $bloginfluencer->id }}</td>
-              <td><a href="/blog/{{ $bloginfluencer->id }}"{{ $bloginfluencer->title }}</a></td>
-              <td>{{ $bloginfluencer->body }}</td>
-          </tr>
+         
           @endforeach
       </table>
   </div>

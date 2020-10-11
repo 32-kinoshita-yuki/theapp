@@ -42,7 +42,7 @@ class RegisterController extends Controller
   $registerinfluencer->save();
  
   // リダイレクト
-  return redirect()->route('influencer.register.complete');
+  //return redirect()->route('influencer.register.complete');
   }
   //インフルエンサー新規登録完了画面view
   public function getComplete(){

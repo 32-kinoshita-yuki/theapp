@@ -23,7 +23,7 @@ Route::get('/', 'UsersController@index');
 Route::group(['prefix' => 'influencer'], function() {
 Route::get('register/create', 'Influencer\RegisterController@getRegister');  //register　view
 Route::get('register/create', 'Influencer\RegisterController@postRegister'); //POST送信した後の処理
-Route::get('register/complete', 'Influencer\RegisterController@getComplete'); //register　view録完了
+Route::get('register/complete', 'Influencer\RegisterController@getComplete'); //register　登録完了view
 Route::get('/login', 'Influencer\RegisterController@getLogin');        //login view
 Route::get('/login', 'Influencer\RegisterController@postLogin');       //ログインからのPOST処理
 
